@@ -7,39 +7,34 @@
  * with this source code in the file LICENSE.
  */
 
-use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
+use Symfony\Component\HttpKernel\Kernel;
 
 class AppKernel extends Kernel
 {
+    /**
+     * {@inheritdoc}
+     */
     public function registerBundles()
     {
         $bundles = array(
-            new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Endroid\Bundle\QrCodeBundle\EndroidQrCodeBundle(),
         );
 
+        if (in_array($this->getEnvironment(), array('dev', 'test'))) {
+            $bundles[] = new Symfony\Bundle\FrameworkBundle\FrameworkBundle();
+            $bundles[] = new Symfony\Bundle\DebugBundle\DebugBundle();
+        }
+
         return $bundles;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function registerContainerConfiguration(LoaderInterface $loader)
     {
         $loader->load(__DIR__.'/config/config.yml');
-    }
-
-    public function getCacheDir()
-    {
-        return sys_get_temp_dir().'/qrcode-bundle';
-    }
-
-    public function serialize()
-    {
-        return $this->config;
-    }
-
-    public function unserialize($config)
-    {
-        $this->__construct($config);
     }
 }

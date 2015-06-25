@@ -1,5 +1,5 @@
-Endroid QR Code Bundle
-======================
+QR Code Bundle
+==============
 
 *By [endroid](http://endroid.nl/)*
 
@@ -10,7 +10,7 @@ Endroid QR Code Bundle
 [![License](http://img.shields.io/packagist/l/endroid/qrcode-bundle.svg)](https://packagist.org/packages/endroid/qrcode-bundle)
 
 This bundle provides a default controller for generating QR codes using the
-Endroid QR Code (endroid/QrCode) library.
+QR Code (endroid/QrCode) library.
 
 [![knpbundles.com](http://knpbundles.com/endroid/EndroidQrCodeBundle/badge-short)](http://knpbundles.com/endroid/EndroidQrCodeBundle)
 

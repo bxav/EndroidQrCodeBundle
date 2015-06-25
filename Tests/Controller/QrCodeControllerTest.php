@@ -13,6 +13,9 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class QrCodeControllerTest extends WebTestCase
 {
+    /**
+     * Tests if the QR code route returns a valid QR code.
+     */
     public function testCreateQrCode()
     {
         $client = static::createClient();
@@ -24,6 +27,6 @@ class QrCodeControllerTest extends WebTestCase
             'labelFontSize' => 16,
         )));
 
-        return $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
     }
 }

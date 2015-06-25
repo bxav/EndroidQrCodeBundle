@@ -1,22 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<phpunit colors="true" bootstrap="./Tests/bootstrap.php">
+<phpunit bootstrap="Tests/app/bootstrap.php" colors="true">
     <testsuites>
-        <testsuite name="Google Cloud Messaging Bundle Test Suite">
-            <directory suffix="Test.php">./Tests/</directory>
+        <testsuite>
+            <directory suffix="Test.php">Tests</directory>
         </testsuite>
     </testsuites>
     <php>
-        <server name="KERNEL_DIR" value="./Tests/Controller/app" />
+        <server name="KERNEL_DIR" value="Tests/app" />
     </php>
-    <filter>
-        <whitelist>
-            <directory>.</directory>
-            <exclude>
-                <directory>./Resources</directory>
-                <directory>./Tests</directory>
-                <directory>./vendor</directory>
-            </exclude>
-        </whitelist>
-    </filter>
 </phpunit>
