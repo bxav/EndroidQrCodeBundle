@@ -7,7 +7,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Endroid\Bundle\QrCodeBundle\Tests\Controller;
+namespace Endroid\Bundle\QrCodeBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
@@ -19,6 +19,7 @@ class QrCodeControllerTest extends WebTestCase
     public function testCreateQrCode()
     {
         $client = static::createClient();
+
         $client->request('GET', $client->getContainer()->get('router')->generate('endroid_qrcode', array(
             'text' => 'Life is too short to be generating QR codes',
             'extension' => 'png',
