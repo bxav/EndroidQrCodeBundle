@@ -104,7 +104,7 @@ the QR code text to the url as mounted, followed by .png, .jpg or .gif.
 
 ## Versioning
 
-Semantic versioning ([semver](http://semver.org/)) is applied.
+Semantic versioning ([semver](http://semver.org/)) is applied as much as possible.
 
 ## License
 
