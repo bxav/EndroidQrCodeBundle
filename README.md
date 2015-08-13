@@ -71,7 +71,7 @@ endroid_qr_code:
     foreground_color: { r: 0, g: 0, b: 0, a: 0 }
     background_color: { r: 255, g: 255, b: 255, a: 0 }
     label: "My label"
-    labelFontSize: 16
+    label_font_size: 16
 ```
 
 Alpha channel available range is [0, 127] in foreground and background colors.
