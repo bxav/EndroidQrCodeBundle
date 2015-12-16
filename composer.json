@@ -27,7 +27,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Endroid\\Bundle\\QrCodeBundle\\": [ "src/", "tests/" ]
+            "Endroid\\Bundle\\QrCodeBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Endroid\\Bundle\\QrCodeBundle\\": "tests/"
         }
     },
     "config": {
