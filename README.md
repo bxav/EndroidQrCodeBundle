@@ -18,7 +18,7 @@ QR Code (endroid/QrCode) library.
 
 * Symfony
 * Dependencies:
- * [`QrCode`](https://github.com/endroid/QrCode)
+  * [`QrCode`](https://github.com/endroid/QrCode)
 
 ## Installation
 
@@ -50,9 +50,9 @@ This step can be skipped when you only use data URIs to display your images.
 
 ``` yml
 EndroidQrCodeBundle:
-    resource:   "@EndroidQrCodeBundle/Controller/"
-    type:       annotation
-    prefix:     /qrcode
+    resource: "@EndroidQrCodeBundle/Controller/"
+    type:     annotation
+    prefix:   /qrcode
 ```
 
 ## Configuration
