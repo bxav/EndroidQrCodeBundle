@@ -36,8 +36,8 @@ class QrCodeExtension extends Twig_Extension implements ContainerAwareInterface
     public function getFunctions()
     {
         return array(
-            new \Twig_SimpleFunction('qrcode_url',array($this, 'qrcodeUrlFunction')),
-            new \Twig_SimpleFunction('qrcode_data_uri',array($this, 'qrcodeDataUriFunction')),
+            new \Twig_SimpleFunction('qrcode_url', array($this, 'qrcodeUrlFunction')),
+            new \Twig_SimpleFunction('qrcode_data_uri', array($this, 'qrcodeDataUriFunction')),
         );
     }
 
