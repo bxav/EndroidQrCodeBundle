@@ -11,24 +11,15 @@ namespace Endroid\Bundle\QrCodeBundle\Twig\Extension;
 
 use Endroid\QrCode\QrCode;
 use Symfony\Component\DependencyInjection\Container;
+use Symfony\Component\DependencyInjection\ContainerAwareTrait;
+use Symfony\Component\Routing\RouterInterface;
 use Twig_Extension;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
+use Twig_SimpleFunction;
 
 class QrCodeExtension extends Twig_Extension implements ContainerAwareInterface
 {
-    /**
-     * @var Container
-     */
-    protected $container;
-
-    /**
-     * @param ContainerInterface $container
-     */
-    public function setContainer(ContainerInterface $container = null)
-    {
-        $this->container = $container;
-    }
+    use ContainerAwareTrait;
 
     /**
      * {@inheritdoc}
@@ -36,8 +27,8 @@ class QrCodeExtension extends Twig_Extension implements ContainerAwareInterface
     public function getFunctions()
     {
         return array(
-            new \Twig_SimpleFunction('qrcode_url', array($this, 'qrcodeUrlFunction')),
-            new \Twig_SimpleFunction('qrcode_data_uri', array($this, 'qrcodeDataUriFunction')),
+            new Twig_SimpleFunction('qrcode_url', array($this, 'qrcodeUrlFunction')),
+            new Twig_SimpleFunction('qrcode_data_uri', array($this, 'qrcodeDataUriFunction')),
         );
     }
 
@@ -99,7 +90,7 @@ class QrCodeExtension extends Twig_Extension implements ContainerAwareInterface
             $params['label_font_path'] = $labelFontPath;
         }
 
-        return $this->container->get('router')->generate('endroid_qrcode', $params, true);
+        return $this->getRouter()->generate('endroid_qrcode', $params);
     }
 
     /**
@@ -196,6 +187,18 @@ class QrCodeExtension extends Twig_Extension implements ContainerAwareInterface
         }
 
         return $qrCode->getDataUri();
+    }
+
+    /**
+     * Returns the router.
+     *
+     * @return RouterInterface
+     *
+     * @throws \Exception
+     */
+    protected function getRouter()
+    {
+        return $this->container->get('router');
     }
 
     /**
