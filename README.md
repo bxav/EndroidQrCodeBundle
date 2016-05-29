@@ -84,15 +84,15 @@ a parameter is omitted, the value in the bundle configuration is used.
 
 ``` twig
 <img src="{{ qrcode_url(message) }}" />
-<img src="{{ qrcode_url(message, extension='png') }}" />
-<img src="{{ qrcode_url(message, size=150) }}" />
+<img src="{{ qrcode_url(message, { extension: 'png' }) }}" />
+<img src="{{ qrcode_url(message, { size: 150 }) }}" />
 ```
 
 You can also use the data URI helper to embed the QR code within your HTML
 instead of requiring a separate HTTP request to load your image.
 
 ``` twig
-<img src="{{ qrcode_data_uri(message, size=200, padding=10) }}" />
+<img src="{{ qrcode_data_uri(message, { size: 200, padding: 10 }) }}" />
 ```
 
 ## Usage

@@ -1,5 +1,8 @@
 services:
-    endroid.qrcode.twig.extension:
+    endroid_qrcode.factory:
+        class: Endroid\QrCode\Factory\QrCodeFactory
+
+    endroid_qrcode.twig.extension:
         class: Endroid\Bundle\QrCodeBundle\Twig\Extension\QrCodeExtension
         tags:
             - { name: twig.extension }
