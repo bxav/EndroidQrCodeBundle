@@ -25,7 +25,7 @@ class QrCodeControllerTest extends WebTestCase
             'extension' => 'png',
             'size' => 150,
             'label' => 'Dit is een label',
-            'labelFontSize' => 16,
+            'label_font_size' => 16,
         )));
 
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
