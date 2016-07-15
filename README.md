@@ -5,8 +5,8 @@ QR Code Bundle
 
 [![Latest Stable Version](http://img.shields.io/packagist/v/endroid/qrcode-bundle.svg)](https://packagist.org/packages/endroid/qrcode-bundle)
 [![Build Status](http://img.shields.io/travis/endroid/EndroidQrCodeBundle.svg)](http://travis-ci.org/endroid/EndroidQrCodeBundle)
-[![Latest Stable Version](https://poser.pugx.org/endroid/qrcode-bundle/v/stable.png)](https://packagist.org/packages/endroid/qrcode-bundle)
 [![Total Downloads](http://img.shields.io/packagist/dt/endroid/qrcode-bundle.svg)](https://packagist.org/packages/endroid/qrcode-bundle)
+[![Monthly Downloads](http://img.shields.io/packagist/dm/endroid/qrcode-bundle.svg)](https://packagist.org/packages/endroid/qrcode-bundle)
 [![License](http://img.shields.io/packagist/l/endroid/qrcode-bundle.svg)](https://packagist.org/packages/endroid/qrcode-bundle)
 
 This bundle provides a default controller for generating QR codes using the
@@ -104,9 +104,9 @@ the QR code text to the url as mounted, followed by .png, .jpg or .gif.
 
 ## Versioning
 
-Version numbers follow the MAJOR.MINOR.PATCH scheme. Backwards compatible
-changes will be kept to a minimum but be aware that these can occur. Lock
-your dependencies for production and test your code when upgrading.
+Version numbers follow the MAJOR.MINOR.PATCH scheme. Backwards compatibility
+breaking changes will be kept to a minimum but be aware that these can occur.
+Lock your dependencies for production and test your code when upgrading.
 
 ## License
 
