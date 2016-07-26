@@ -45,6 +45,12 @@ class QrCodeExtension extends Twig_Extension implements ContainerAwareInterface
         $params = $options;
         $params['text'] = $text;
 
+        // Extension is a mandatory route parameter: if not set retrieve from defaults
+        if (!isset($params['extension'])) {
+            $defaultOptions = $this->getQrCodeFactory()->getDefaultOptions();
+            $params['extension'] = $defaultOptions['extension'];
+        }
+
         return $this->getRouter()->generate('endroid_qrcode', $params);
     }
 
