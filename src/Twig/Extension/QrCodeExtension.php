@@ -26,10 +26,10 @@ class QrCodeExtension extends Twig_Extension implements ContainerAwareInterface
      */
     public function getFunctions()
     {
-        return array(
-            new Twig_SimpleFunction('qrcode_url', array($this, 'qrcodeUrlFunction')),
-            new Twig_SimpleFunction('qrcode_data_uri', array($this, 'qrcodeDataUriFunction')),
-        );
+        return [
+            new Twig_SimpleFunction('qrcode_url', [$this, 'qrcodeUrlFunction']),
+            new Twig_SimpleFunction('qrcode_data_uri', [$this, 'qrcodeDataUriFunction']),
+        ];
     }
 
     /**
@@ -40,7 +40,7 @@ class QrCodeExtension extends Twig_Extension implements ContainerAwareInterface
      *
      * @return string
      */
-    public function qrcodeUrlFunction($text, array $options = array())
+    public function qrcodeUrlFunction($text, array $options = [])
     {
         $params = $options;
         $params['text'] = $text;
@@ -62,7 +62,7 @@ class QrCodeExtension extends Twig_Extension implements ContainerAwareInterface
      *
      * @return string
      */
-    public function qrcodeDataUriFunction($text, array $options = array())
+    public function qrcodeDataUriFunction($text, array $options = [])
     {
         $qrCode = $this->getQrCodeFactory()->createQrCode($options);
         $qrCode->setText($text);
