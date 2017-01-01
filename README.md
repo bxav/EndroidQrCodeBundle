@@ -1,3 +1,6 @@
+**THIS BUNDLE HAS MOVED TO [`endroid/qrcode`](https://github.com/endroid/QrCode)**  
+**THIS REPOSITORY IS ABANDONED AND WILL BE REMOVED ON 01-07-2017**
+
 QR Code Bundle
 ==============
 
